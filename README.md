@@ -24,7 +24,7 @@ This ensures:
 -   Git LFS is initialized
 -   The repository is cloned.
 -   All large files (e.g., .ITAG files) are downloaded automatically 
-
+-   The repository will be cloned into the current working directory.
 
 ### 2. Create target table in PostgreSQL
 
