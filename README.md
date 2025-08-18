@@ -14,9 +14,19 @@ It performs the following tasks:
     batch inserts for high performance.
 
 
-## How to Run
+## How to Setup and Run
+### 1. Clone the Repository with Git LFS Support
 
-### 1. Create target table in PostgreSQL
+``` bash
+git lfs install && git clone https://github.com/Chanakya5555/ITAG.git && cd ITAG && git lfs pull
+```
+This ensures:
+-   Git LFS is initialized
+-   The repository is cloned.
+-   All large files (e.g., .ITAG files) are downloaded automatically 
+
+
+### 2. Create target table in PostgreSQL
 
 ``` sql
 CREATE TABLE itag_tag_status (
@@ -27,7 +37,7 @@ CREATE TABLE itag_tag_status (
 );
 ```
 
-### 2. Update DB connection settings inside the script
+### 3. Update DB connection settings inside the script
 
 ``` python
 conn = psycopg2.connect(
@@ -38,19 +48,19 @@ conn = psycopg2.connect(
 )
 ```
 
-### 3. Set the ITAG file path
+### 4. Set the ITAG file path
 
 ``` python
 file_path = r"E:\itag_assignment\022_20250810202034.ITAG"
 ```
 
-### 4. Run the script
+### 5. Run the script
 
 ``` bash
 python itag_ingest.py
 ```
 
-### 5. Check results
+### 6. Check results
 
 -   Inserted records → `itag_tag_status` table\
 -   Errors → `itag_ingestion_errors.log`\
